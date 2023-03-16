@@ -1,14 +1,12 @@
 package org.example.SrbijaVoz;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 public class Kupovina {
     WebDriver driver;
 
     public Kupovina(WebDriver driver) {
         this.driver = driver;
     }
-
     private By usloviChckbox = By.xpath("//*[@ng-model='uslovi']");
     private By kupiKarteBtn = By.xpath("//*[.='Kupi karte']");
     private By cardInfoText = By.xpath("//*[contains(text(),'UNESITE PODATKE')]");

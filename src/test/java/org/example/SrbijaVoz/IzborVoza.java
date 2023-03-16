@@ -1,5 +1,4 @@
 package org.example.SrbijaVoz;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -12,14 +11,13 @@ public class IzborVoza {
     public IzborVoza(WebDriver driver) {
         this.driver = driver;
     }
-
     //Home page
     private By stanicaOd = By.id("stanicaod");
     private By stanicaDo = By.id("stanicado");
     private By datumPolazak = By.xpath("//*[@ng-click='open()']//*[@class='glyphicon glyphicon-calendar']");
     private By datePicker = By.xpath("//div[@uib-datepicker]//table//th[@colspan]");
     private By dateNext = By.xpath("//*[@class='btn btn-default btn-sm pull-right uib-right']");
-    private By dan = By.xpath("//*[text()='19']"); // datum dan
+    private By dan = By.xpath("//*[text()='17']"); // datum dan
     private By razred = By.xpath("//*[@id='selectbasic'][@ng-model='razred']");
     private By brPutnika = By.xpath("//*[@name='brput']");
     private By traziBtn = By.id("btntrazi");
@@ -31,7 +29,7 @@ public class IzborVoza {
         driver.findElement(stanicaDo).sendKeys("Beograd Centar" + Keys.ENTER);
         driver.findElement(datumPolazak).click();
         Thread.sleep(2000);
-        String datePick = driver.findElement(datePicker).getText(); // Trazimo 16.04.2023
+        String datePick = driver.findElement(datePicker).getText();
         String month = datePick.split(" ")[0];
         String year = datePick.split(" ")[1];
 
@@ -54,7 +52,6 @@ public class IzborVoza {
         driver.findElement(traziBtn).click();
 
         driver.findElement(izaberiBtn).click();
-        System.out.println("Ovaj voz je prosao za danas, pokusaj sutra.");
         driver.findElement(daljeBtn).click();
     }
 }
