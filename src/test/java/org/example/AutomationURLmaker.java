@@ -5,13 +5,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.Test;
 
 public class AutomationURLmaker {
     @Test
     public void tinyWebLink() throws InterruptedException {
-
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
+        WebDriver driver = new ChromeDriver(chromeOptions);
         WebDriverManager.chromedriver().setup();
         driver.get("https://tinyurl.com/app/");
 

@@ -5,6 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
@@ -12,7 +13,9 @@ public class HomeWork2 {
 
     @Test
     public void homeWork3() throws InterruptedException {
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
+        WebDriver driver = new ChromeDriver(chromeOptions);
         WebDriverManager.chromedriver().setup();
         driver.get("https://www.ctshop.rs/");
         WebElement registration = driver.findElement(By.xpath("//a[contains(text(), 'Otvori nalog')]"));
@@ -54,5 +57,7 @@ public class HomeWork2 {
         System.out.println(povratnaPoruka.getText());
 
         System.out.println("Test is completed successfully!");
+
+        driver.close();
     }
 }
