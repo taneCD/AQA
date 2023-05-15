@@ -1,14 +1,9 @@
-package org.example.AppTestOne;
+package org.example.Plaky;
 
-import dev.failsafe.internal.util.Durations;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.time.temporal.ChronoUnit;
 
 public class HomePageApp {
     WebDriver driver;
@@ -37,7 +32,7 @@ public class HomePageApp {
             driver.findElement(logintWithGoggle).click();
             driver.findElement(userName).sendKeys("zatest404@gmail.com");
             driver.findElement(userNameNextBtnx).click();
-            Thread.sleep(1000);
+            Thread.sleep(4000);
             driver.findElement(pass).sendKeys("testMeNow");
             driver.findElement(nextBtn).click();
 
@@ -71,7 +66,7 @@ public class HomePageApp {
             }
         }
         if(tacno){
-            System.out.println("Sadrzi trazeni el!");
+            System.out.println("*** Sadrzi trazeni el! ***");
         }
     }
 }
