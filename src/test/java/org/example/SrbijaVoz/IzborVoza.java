@@ -17,7 +17,7 @@ public class IzborVoza {
     private By datumPolazak = By.xpath("//*[@ng-click='open()']//*[@class='glyphicon glyphicon-calendar']");
     private By datePicker = By.xpath("//div[@uib-datepicker]//table//th[@colspan]");
     private By dateNext = By.xpath("//*[@class='btn btn-default btn-sm pull-right uib-right']");
-    private By dan = By.xpath("//*[text()='17']"); // datum dan
+    private By dan = By.xpath("//*[text()='22']"); // datum dan
     private By razred = By.xpath("//*[@id='selectbasic'][@ng-model='razred']");
     private By brPutnika = By.xpath("//*[@name='brput']");
     private By traziBtn = By.id("btntrazi");
@@ -33,7 +33,7 @@ public class IzborVoza {
         String month = datePick.split(" ")[0];
         String year = datePick.split(" ")[1];
 
-        while (!(month.equals("april") && year.equals("2023"))) {
+        while (!(month.equals("maj") && year.equals("2023"))) {
             driver.findElement(dateNext).click();
 
             datePick = driver.findElement(datePicker).getText();
