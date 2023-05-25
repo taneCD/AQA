@@ -108,8 +108,6 @@ public class EvermedDb {
             }
         }
     }
-
-    //    public static void main(String[] args) {
     public void aktivacija() throws InterruptedException {
         EvermedDataBaseConnect();
         createNewDatabase("EvermedDB.db");
